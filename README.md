@@ -3,7 +3,7 @@
   <!-- Project Logo or Banner -->
   <img src="assets/logo.png" alt="Project Banner" width="120" />
 
-  # 🌐 WebApp Name
+  # 🌐 Pizza Factor
 
   **A modern, responsive full-stack platform for [briefly describe core value proposition].**
 
