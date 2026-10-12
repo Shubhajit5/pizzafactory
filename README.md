@@ -1,63 +1,51 @@
 <div align="center">
 
-  <!-- Project Logo or Banner -->
-  <img src="assets/logo.png" alt="Project Banner" width="120" />
+  # 🍕 Pizza Factory
 
-  # 🌐 Pizza Factor
+  **A modern, lightweight, and responsive pizza ordering frontend integrated with FormSubmit.**
 
-  **A modern, responsive full-stack platform for [briefly describe core value proposition].**
-
-  [Live Demo](https://your-website-domain.com) · [Report Bug](https://github.com/username/repo-name/issues) · [Request Feature](https://github.com/username/repo-name/issues)
-
-  <!-- Badges -->
-  [![Live Deployment](https://img.shields.io/badge/Demo-Live_Site-brightgreen?style=for-the-badge&logo=vercel)](https://your-website-domain.com)
+  [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+  [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-  [![Build Status](https://img.shields.io/badge/Build-Passing-success?style=for-the-badge)](https://github.com/username/repo-name/actions)
 
 </div>
 
 ---
 
-## 📸 Screenshots & Preview
+## 📌 Overview
 
-| Desktop Dashboard | Mobile View |
-| :---: | :---: |
-| <img src="assets/preview-desktop.png" alt="Desktop Screenshot" width="100%"> | <img src="assets/preview-mobile.png" alt="Mobile Screenshot" width="50%"> |
-
-*💡 Tip: Embed a 10-second demo GIF here showing key user flows.*
+**Pizza Factory** is a single-page web application featuring a sleek, mobile-friendly order form. It allows customers to submit their name, delivery address, pizza size preferences, toppings selection, and custom notes directly via email without requiring a dedicated backend server.
 
 ---
 
 ## ✨ Features
 
-- **⚡ Blazing Fast:** Built with modern server-side rendering for optimal Core Web Vitals.
-- **🔐 Secure Authentication:** OAuth 2.0 / JWT integration with role-based access control.
-- **🎨 Responsive UI:** Mobile-first, accessible design system with dark/light mode toggle.
-- **📊 Real-Time Updates:** WebSocket integration for live data updates.
+* **🎨 Clean & Modern UI:** Designed with a warm, appetizing color palette, smooth interactive states, and a clean Google Font (`Poppins`).
+* **📱 Fully Responsive:** Adaptive layout using CSS Grid and Flexbox that scales seamlessly from widescreen desktop monitors down to mobile devices.
+* **⚡ Serverless Form Handling:** Powered by [FormSubmit](https://formsubmit.co/), routing form submissions directly to your email inbox with custom subjects and disabled captchas.
+* **🚀 Fun Redirect Flow:** Automatically routes customers to a custom success page (currently configured with a classic post-submission redirect easter egg).
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-- ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-- ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
-- ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-
-### Backend & Database
-- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-- ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-- ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
+* **Markup:** HTML5 (Semantic elements, fieldsets, and forms)
+* **Styling:** Vanilla CSS3 (Custom CSS Variables, Flexbox, Grid, Media Queries)
+* **Backend Integration:** FormSubmit API
 
 ---
 
-## 🏗️ System Architecture
+## 🚀 Getting Started
 
-```mermaid
-graph TD;
-    Client[Browser / Client] -->|HTTPS Requests| CDN[Vercel CDN / Frontend];
-    CDN -->|API Calls| API[Node.js / Express API];
-    API -->|ORM Queries| DB[(PostgreSQL Database)];
-    API -->|Auth| OAuth[OAuth Provider];
-    
+Because this is a zero-dependency static web app, running it locally requires no build steps or package managers.
+
+### Prerequisites
+
+* Any modern web browser (Chrome, Firefox, Safari, Edge)
+
+### Installation & Local Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/username/pizza-factory.git](https://github.com/username/pizza-factory.git)
+   
