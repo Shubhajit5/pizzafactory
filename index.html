@@ -4,29 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza Factory - Place Your Order</title>
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --primary-color: #e63946;
             --primary-hover: #d62828;
-            --secondary-color: #f4a261;
             --bg-color: #fdf6ec;
             --card-bg: #ffffff;
             --text-color: #2b2d42;
-            --border-color: #e0e0e0;
+            --border-color: #d1d5db;
             --radius: 12px;
             --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -36,152 +28,62 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
 
         .order-card {
             background-color: var(--card-bg);
             width: 100%;
             max-width: 550px;
-            padding: 35px 30px;
+            padding: 30px 20px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+        header { text-align: center; margin-bottom: 25px; }
+        header h1 { color: var(--primary-color); font-size: 1.8rem; font-weight: 700; }
+        header p { color: #6c757d; font-size: 0.95rem; margin-top: 4px; }
 
-        header h1 {
-            color: var(--primary-color);
-            font-size: 2rem;
-            font-weight: 700;
-        }
+        .form-group { margin-bottom: 20px; }
+        label.form-label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.95rem; }
 
-        header p {
-            color: #6c757d;
-            font-size: 0.95rem;
-            margin-top: 4px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label.form-label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        input[type="text"],
-        textarea {
+        /* Font size set to 16px to prevent mobile auto-zoom on focus */
+        input[type="text"], textarea {
             width: 100%;
             padding: 12px 14px;
             border: 1.5px solid var(--border-color);
             border-radius: 8px;
             font-family: inherit;
-            font-size: 0.95rem;
+            font-size: 16px; 
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            background-color: #fff;
         }
 
-        input[type="text"]:focus,
-        textarea:focus {
+        input[type="text"]:focus, textarea:focus {
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
         }
 
-        .options-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        fieldset { border: 1.5px solid var(--border-color); border-radius: 8px; padding: 12px; }
+        legend { font-weight: 600; font-size: 0.95rem; padding: 0 6px; }
 
-        fieldset {
-            border: 1.5px solid var(--border-color);
-            border-radius: 8px;
-            padding: 15px;
-        }
+        .option-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; cursor: pointer; font-size: 0.95rem; }
+        .option-item:last-child { margin-bottom: 0; }
+        .option-item input { accent-color: var(--primary-color); width: 18px; height: 18px; cursor: pointer; }
 
-        legend {
-            font-weight: 600;
-            font-size: 0.9rem;
-            padding: 0 8px;
-            color: var(--text-color);
-        }
+        textarea { resize: vertical; min-height: 90px; }
 
-        .option-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .option-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .option-item input {
-            accent-color: var(--primary-color);
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 90px;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-        }
-
-        .btn-submit {
-            background-color: var(--primary-color);
-            color: #ffffff;
-        }
-
-        .btn-submit:hover {
-            background-color: var(--primary-hover);
-        }
-
-        .btn-submit:active {
-            transform: scale(0.98);
-        }
-
-        .btn-reset {
-            background-color: #e9ecef;
-            color: #495057;
-        }
-
-        .btn-reset:hover {
-            background-color: #dee2e6;
-        }
+        .button-group { display: flex; gap: 12px; margin-top: 25px; }
+        .btn { flex: 1; padding: 14px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+        .btn-submit { background-color: var(--primary-color); color: #ffffff; }
+        .btn-submit:hover { background-color: var(--primary-hover); }
+        .btn-reset { background-color: #e9ecef; color: #495057; }
+        .btn-reset:hover { background-color: #dee2e6; }
 
         @media (max-width: 480px) {
-            .options-grid {
-                grid-template-columns: 1fr;
-            }
+            .options-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -193,59 +95,52 @@
             <p>Pizza Order Form</p>
         </header>
 
-        <form action="#" method="POST">
-            <!-- Customer Details -->
+        <!-- 
+          =======================================================
+          1. PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW:
+          =======================================================
+        -->
+        <form action="https://script.google.com/macros/s/AKfycbzyZj3_r27GhFW7KVWwMSlkG_-uKtfQg1YacgJKHC8aUBX7QnLonHKUE5AW92kf37TyLQ/exec" method="POST">
+            
+            <!-- 
+              =======================================================
+              2. PASTE YOUR GITHUB PAGES URL BELOW (for redirecting):
+              =======================================================
+            -->
+            <input type="hidden" name="_next" value="https://shubhajit5.github.io/pizzafactory/">
+
             <div class="form-group">
                 <label class="form-label" for="customer-name">Full Name</label>
-                <input type="text" id="customer-name" name="name" placeholder="John Doe" required>
+                <input type="text" id="customer-name" name="Name" placeholder="John Doe" required>
             </div>
 
             <div class="form-group">
                 <label class="form-label" for="customer-address">Delivery Address</label>
-                <input type="text" id="customer-address" name="address" placeholder="123 Main St, Apt 4B" required>
+                <input type="text" id="customer-address" name="Address" placeholder="123 Main St, Apt 4B" required>
             </div>
 
-            <!-- Pizza Size & Toppings -->
             <div class="options-grid">
-                <!-- Size Options -->
                 <fieldset>
                     <legend>Size</legend>
-                    <label class="option-item">
-                        <input type="radio" name="size" value="Small" required> Small
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="size" value="Medium" checked> Medium
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="size" value="Large"> Large
-                    </label>
+                    <label class="option-item"><input type="radio" name="Size" value="Small" required> Small</label>
+                    <label class="option-item"><input type="radio" name="Size" value="Medium" checked> Medium</label>
+                    <label class="option-item"><input type="radio" name="Size" value="Large"> Large</label>
                 </fieldset>
 
-                <!-- Toppings Options -->
                 <fieldset>
                     <legend>Toppings</legend>
-                    <label class="option-item">
-                        <input type="checkbox" name="toppings[]" value="Cheese"> Cheese
-                    </label>
-                    <label class="option-item">
-                        <input type="checkbox" name="toppings[]" value="Olives"> Olives
-                    </label>
-                    <label class="option-item">
-                        <input type="checkbox" name="toppings[]" value="Pepperoni"> Pepperoni
-                    </label>
-                    <label class="option-item">
-                        <input type="checkbox" name="toppings[]" value="Bacon"> Bacon
-                    </label>
+                    <label class="option-item"><input type="checkbox" name="Toppings[]" value="Cheese"> Cheese</label>
+                    <label class="option-item"><input type="checkbox" name="Toppings[]" value="Olives"> Olives</label>
+                    <label class="option-item"><input type="checkbox" name="Toppings[]" value="Pepperoni"> Pepperoni</label>
+                    <label class="option-item"><input type="checkbox" name="Toppings[]" value="Bacon"> Bacon</label>
                 </fieldset>
             </div>
 
-            <!-- Special Instructions -->
             <div class="form-group">
-                <label class="form-label" for="comments">Special Instructions / Comments</label>
-                <textarea id="comments" name="comments" placeholder="Any delivery notes or crust preferences..."></textarea>
+                <label class="form-label" for="comments">Special Instructions</label>
+                <textarea id="comments" name="Comments" placeholder="Any delivery notes or crust preferences..."></textarea>
             </div>
 
-            <!-- Form Actions -->
             <div class="button-group">
                 <button type="submit" class="btn btn-submit">Process Order</button>
                 <button type="reset" class="btn btn-reset">Clear</button>
