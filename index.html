@@ -47,7 +47,6 @@
         .form-group { margin-bottom: 20px; }
         label.form-label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.95rem; }
 
-        /* Font size set to 16px to prevent mobile auto-zoom on focus */
         input[type="text"], textarea {
             width: 100%;
             padding: 12px 14px;
@@ -96,18 +95,20 @@
         </header>
 
         <!-- 
-          =======================================================
-          1. PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW:
-          =======================================================
+          ========================================================================
+          REPLACE "YOUR_EMAIL_HERE@gmail.com" BELOW WITH YOUR ACTUAL EMAIL ADDRESS
+          ========================================================================
         -->
-        <form action="" method="POST">
+        <form action="https://formsubmit.co/shubhajitr995@gmail.com" method="POST">
             
-            <!-- 
-              =======================================================
-              2. PASTE YOUR GITHUB PAGES URL BELOW (for redirecting):
-              =======================================================
-            -->
-            <input type="hidden" name="_next" value="">
+            <!-- Redirect user to the Rickroll video upon submission -->
+            <input type="hidden" name="_next" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+
+            <!-- Set custom subject line for incoming email notifications -->
+            <input type="hidden" name="_subject" value="🍕 New Pizza Order Received!">
+
+            <!-- Disable captcha verification step for a smoother submission -->
+            <input type="hidden" name="_captcha" value="false">
 
             <div class="form-group">
                 <label class="form-label" for="customer-name">Full Name</label>
